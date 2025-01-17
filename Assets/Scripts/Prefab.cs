@@ -2,19 +2,17 @@ using UnityEngine;
 
 public class InstantiatePrefabs : MonoBehaviour
 {
-    public GameObject prefab; // در این قسمت prefab خود را از Inspector drag & drop کنید.
-    public float spacing = 2f; // فاصله بین پین‌ها
+    public GameObject prefab; // به prefab خود در Inspector ارجاع دهید
+    public int numberOfInstances = 10; // تعداد نمونه‌ها
+    public float spacing = 2f; // فاصله بین نمونه‌ها
 
     void Start()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < numberOfInstances; i++)
         {
-            // موقعیت هر پین را بر اساس فاصله تعیین می‌کنیم.
             Vector3 position = transform.position + new Vector3(i * spacing, 0, 0);
-            // نمونه prefab را ایجاد می‌کنیم.
-            GameObject instance = Instantiate(prefab, position, Quaternion.identity);
-            // می‌توانید در اینجا تنظیمات اضافی برای هر نمونه انجام دهید.
-            // مثلاً: instance.name = "Pin " + i;
+            Quaternion rotation = Quaternion.Euler(-90, 0, 0); // تنظیم روتیشن پین‌ها
+            Instantiate(prefab, position, rotation);
         }
     }
 }
