@@ -22,7 +22,7 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.CompareTag("Pin")) // اگر به پین برخورد کرد
         {
             Debug.Log("Ball hit the pin!"); // پیغام برای اشکال‌زدایی
-            Invoke("ActivateFallCamera", 0.3f); // 0.5 ثانیه تأخیر
+            Invoke("ActivateFallCamera", 0.1f); // 0.5 ثانیه تأخیر
         }
     }
 
